@@ -1,0 +1,124 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+
+    <head>
+        <link href="concordion.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+
+        <h1>Calculate Amazon shipping costs</h1>
+
+        <p>
+            As a customer I want to calculate the shipping costs for my 
+            products in the shopping cart in order to get the cheapest possible total price.
+        </p>
+
+        <div class="example">
+
+            <h3>Examples</h3>
+
+            <table concordion:execute="#result = calculateShippingCosts(#customerType,#category1,#price1,#category2,#price2,#shippingMethod)">
+                <tr>
+                    <th concordion:set="#customerType">Customer Type</th>
+                    <th concordion:set="#category1">Category of Article 1</th>
+                    <th concordion:set="#price1">Price of Article 1</th>
+                    <th concordion:set="#category2">Category of Article 2</th>
+                    <th concordion:set="#price2">Price of Article 2</th>
+                    <th concordion:set="#shippingMethod">Shipping Method</th>
+                    <th concordion:assertEquals="#result">Shipping Costs</th>
+                </tr>
+                <tr>
+                    <td>PRIME</td>
+                    <td>BOOKS</td>
+                    <td>5.0</td>
+                    <td>MUSIC</td>
+                    <td>5.0</td>
+                    <td>PREMIUM</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>PRIME</td>
+                    <td>BOOKS</td>
+                    <td>20.0</td>
+                    <td>ELECTRONICS</td>
+                    <td>180.0</td>
+                    <td>MORNING_EXPRESS</td>
+                    <td>10.0</td>
+                </tr>
+                <tr>
+                    <td>PRIME</td>
+                    <td>MUSIC</td>
+                    <td>10.0</td>
+                    <td>FILMS</td>
+                    <td>10.0</td>
+                    <td>PREMIUM</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>PRIME</td>
+                    <td>MUSIC</td>
+                    <td>10.0</td>
+                    <td>FILMS</td>
+                    <td>10.0</td>
+                    <td>STANDARD</td>
+                    <td>Error: Premium customers cannot select standard shipping method</td>
+                </tr>
+                <tr>
+                    <td>STANDARD</td>
+                    <td>BOOKS</td>
+                    <td>5.0</td>
+                    <td>MUSIC</td>
+                    <td>7.0</td>
+                    <td>STANDARD</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>STANDARD</td>
+                    <td>BOOKS</td>
+                    <td>20.0</td>
+                    <td>ELECTRONICS</td>
+                    <td>100.0</td>
+                    <td>MORNING_EXPRESS</td>
+                    <td>13.0</td>
+                </tr>
+                <tr>
+                    <td>STANDARD</td>
+                    <td>MUSIC</td>
+                    <td>10.0</td>
+                    <td>FILMS</td>
+                    <td>18.99</td>
+                    <td>STANDARD</td>
+                    <td>3.0</td>
+                </tr>
+                <tr>
+                    <td>STANDARD</td>
+                    <td>MUSIC</td>
+                    <td>10.0</td>
+                    <td>FILMS</td>
+                    <td>19.0</td>
+                    <td>STANDARD</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>STANDARD</td>
+                    <td>MUSIC</td>
+                    <td>10.0</td>
+                    <td>FILMS</td>
+                    <td>19.0</td>
+                    <td>PREMIUM</td>
+                    <td>6.0</td>
+                </tr>
+                <tr>
+                    <td>STANDARD</td>
+                    <td>BOOKS</td>
+                    <td>10.0</td>
+                    <td>MUSIC</td>
+                    <td>18.99</td>
+                    <td>PREMIUM</td>
+                    <td>6.0</td>
+                </tr>
+            </table>
+
+        </div>
+    </body>
+</html>
