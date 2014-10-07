@@ -4,3 +4,12 @@ pom.xml.releaseBackup
 pom.xml.versionsBackup
 pom.xml.next
 release.properties
+amazon-shipping-calculator/.classpath
+amazon-shipping-calculator/.project
+amazon-shipping-calculator/.settings/
+database-migration-test/.classpath
+database-migration-test/.project
+database-migration-test/.settings/
+tdd-samples/.classpath
+tdd-samples/.project
+tdd-samples/.settings/
